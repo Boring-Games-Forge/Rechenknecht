@@ -6,6 +6,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    rechner = new Rechner();
 }
 
 MainWindow::~MainWindow()
@@ -46,5 +47,9 @@ void MainWindow::on_pushButton_plus_clicked()
 
 void MainWindow::on_pushButton_equal_clicked()
 {
-
+    char c;
+    rechner->term = ui->lineEdit->text().toStdString() + "\n";
+    c = rechner->term.at(rechner->position++);
+    QString qstr = QString("%1").arg(rechner->ausdruck(c));
+    ui->lineEdit->setText(qstr);
 }

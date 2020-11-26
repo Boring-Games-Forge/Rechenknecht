@@ -60,9 +60,9 @@ long double Rechner::summand(char& c)
     return s;
 }
 
-long double Rechner::ausdruck(char& c) // Übergabe per Referenz!
+double Rechner::ausdruck(char& c) // Übergabe per Referenz!
 {
-    long double a{ 0 }; // Hilfsvariable für Ausdruck
+    double a{ 0 }; // Hilfsvariable für Ausdruck
     if (c == '-') {
         c = term.at(position++); // - im Eingabestrom überspringen
         a = -summand(c); // Rest an summand() übergeben

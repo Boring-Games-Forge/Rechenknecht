@@ -2,6 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QString>
+#include "rechner.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -12,6 +14,8 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
+    Rechner *rechner;
+
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 

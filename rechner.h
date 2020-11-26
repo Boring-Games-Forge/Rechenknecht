@@ -13,7 +13,7 @@ public:
     int position = 0;
 
     explicit Rechner(QObject *parent = nullptr);
-    long double ausdruck(char& c);
+    double ausdruck(char& c);
 
 private:
     long double zahl(char& c);
