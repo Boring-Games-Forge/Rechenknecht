@@ -35,8 +35,9 @@ long double Rechner::faktor(char& c)
     if (c == '(') {
         c = term.at(position++); // ( überspringen
         f = ausdruck(c);
-        if (c != ')')
-            std::cout << "Rechte Klammer fehlt!\n"; //*** s.u.
+        if (c != ')'){
+            //std::cout << "Rechte Klammer fehlt!\n"; //*** s.u.
+        }
         else
             c = term.at(position++); // ) überspringen
     }
@@ -48,7 +49,7 @@ long double Rechner::faktor(char& c)
 long double Rechner::summand(char& c)
 {
     long double s{ faktor(c) };
-    if (c == '*' || c == '/')
+    if (c == '*' || c == '/') {
         if (c == '*') {
             c = term.at(position++); // * überspringen
             s *= faktor(c);
@@ -57,6 +58,7 @@ long double Rechner::summand(char& c)
             c = term.at(position++); // / überspringen
             s /= faktor(c);
         }
+    }
     return s;
 }
 
@@ -85,7 +87,12 @@ double Rechner::ausdruck(char& c) // Übergabe per Referenz!
     return a;
 }
 
-//int main()
+double Rechner::calc(QString s) {
+    char c;
+    this->term = s.toStdString() + "\n";
+    c = this->term.at(this->position++);
+    return ausdruck(c);
+}
 //{
 //	char c{'\n'};
 //	c = term.at(position++);

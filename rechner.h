@@ -2,7 +2,7 @@
 #define RECHNER_H
 
 #include <QObject>
-#include <iostream>
+//#include <iostream>
 #include <string>
 
 class Rechner : public QObject
@@ -13,9 +13,10 @@ public:
     int position = 0;
 
     explicit Rechner(QObject *parent = nullptr);
-    double ausdruck(char& c);
+    double calc(QString s);
 
 private:
+    double ausdruck(char& c);
     long double zahl(char& c);
     long double faktor(char& c);
     long double summand(char& c);

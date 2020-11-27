@@ -12,6 +12,7 @@ MainWindow::MainWindow(QWidget *parent)
 MainWindow::~MainWindow()
 {
     delete ui;
+    delete rechner;
 }
 
 
@@ -47,9 +48,71 @@ void MainWindow::on_pushButton_plus_clicked()
 
 void MainWindow::on_pushButton_equal_clicked()
 {
-    char c;
-    rechner->term = ui->lineEdit->text().toStdString() + "\n";
-    c = rechner->term.at(rechner->position++);
-    QString qstr = QString("%1").arg(rechner->ausdruck(c));
+    QString qstr = QString("%1").arg(rechner->calc(ui->lineEdit->text()));
     ui->lineEdit->setText(qstr);
+}
+
+void MainWindow::on_pushButton_6_clicked()
+{
+    ui->lineEdit->setText(ui->lineEdit->text() + "6");
+}
+
+void MainWindow::on_pushButton_7_clicked()
+{
+    ui->lineEdit->setText(ui->lineEdit->text() + "7");
+}
+
+void MainWindow::on_pushButton_8_clicked()
+{
+        ui->lineEdit->setText(ui->lineEdit->text() + "8");
+}
+
+void MainWindow::on_pushButton_9_clicked()
+{
+    ui->lineEdit->setText(ui->lineEdit->text() + "9");
+}
+
+void MainWindow::on_pushButton_0_clicked()
+{
+    ui->lineEdit->setText(ui->lineEdit->text() + "0");
+}
+
+void MainWindow::on_pushButton_minus_clicked()
+{
+    ui->lineEdit->setText(ui->lineEdit->text() + "-");
+}
+
+void MainWindow::on_pushButton_multiplication_clicked()
+{
+    ui->lineEdit->setText(ui->lineEdit->text() + "*");
+}
+
+void MainWindow::on_pushButton_division_clicked()
+{
+    ui->lineEdit->setText(ui->lineEdit->text() + "/");
+}
+
+void MainWindow::on_pushButton_clear_clicked()
+{
+    ui->lineEdit->setText("");
+}
+
+void MainWindow::on_pushButton_right_bracket_clicked()
+{
+    ui->lineEdit->setText(ui->lineEdit->text() + ")");
+}
+
+void MainWindow::on_pushButton_left_bracket_clicked()
+{
+    ui->lineEdit->setText(ui->lineEdit->text() + "(");
+}
+
+void MainWindow::on_pushButton_sqrt_clicked()
+{
+    ui->lineEdit->setText(ui->lineEdit->text() + "^");
+}
+
+void MainWindow::on_pushButton_pi_clicked()
+{
+    ui->lineEdit->setText(ui->lineEdit->text() + "3.1415");
 }
