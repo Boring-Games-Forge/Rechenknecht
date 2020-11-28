@@ -46,48 +46,61 @@ void MainWindow::on_pushButton_plus_clicked()
     ui->lineEdit->setText(ui->lineEdit->text() + "+");
 }
 
+
+
 void MainWindow::on_pushButton_equal_clicked()
 {
     QString term_as_str = ui->lineEdit->text();
     QString term_as_new_str;
     QString result_as_str;
     int result_as_int;
-    int term_as_int;
     bool ok;
     QString zahl;
     int zahl_as_int;
 
     QStringList zahlen_liste = term_as_str.split(QRegExp("\\W|\\D"));
-    for (int i = 0; i < zahlen_liste.length(); i++) {
-        zahl = zahlen_liste[i];
-        zahl_as_int = zahl.toInt(&ok, 2);
-        zahlen_liste[i] = QString::number(zahl_as_int);
-    }
 
     if (ui->radioButton_bin->isChecked()) {
         // binaer in dezimal...
-        int l = 0;
-        int j = 0;
-        int o = 0;
-        //QString zahl;
-        for (int i = 0; i < term_as_str.length(); i++) {
-            j = 0;
-            if (isdigit(term_as_str.at(i).toLatin1())) {
-                l++;
-            } else {
-                term_as_new_str = term_as_str.replace(i-l, l, zahlen_liste[o++]);
-                l = 0;
-            }
+        for (int i = 0; i < zahlen_liste.length(); i++) {
+            zahl = zahlen_liste[i];
+            zahl_as_int = zahl.toInt(&ok, 2);
+            zahlen_liste[i] = QString::number(zahl_as_int);
         }
-        //result_as_str = QString("%1").arg(result_as_int,0, 2);
     } else if (ui->radioButton_oct->isChecked()){
+        for (int i = 0; i < zahlen_liste.length(); i++) {
+            zahl = zahlen_liste[i];
+            zahl_as_int = zahl.toInt(&ok, 8);
+            zahlen_liste[i] = QString::number(zahl_as_int);
+        }
 
     } else if (ui->radioButton_dec->isChecked()){
-
+        for (int i = 0; i < zahlen_liste.length(); i++) {
+            zahl = zahlen_liste[i];
+            zahl_as_int = zahl.toInt(&ok, 10);
+            zahlen_liste[i] = QString::number(zahl_as_int);
+        }
     } else if (ui->radioButton_hex->isChecked()){
+        for (int i = 0; i < zahlen_liste.length(); i++) {
+            zahl = zahlen_liste[i];
+            zahl_as_int = zahl.toInt(&ok, 16);
+            zahlen_liste[i] = QString::number(zahl_as_int);
+        }
 
     }
 
+    int l = 0;
+    int j = 0;
+    int o = 0;
+    for (int i = 0; i < term_as_str.length(); i++) {
+        j = 0;
+        if (isdigit(term_as_str.at(i).toLatin1())) {
+            l++;
+        } else {
+            term_as_new_str = term_as_str.replace(i-l, l, zahlen_liste[o++]);
+            l = 0;
+        }
+    }
     result_as_int = rechner->calc(term_as_str);
 
     if (ui->radioButton_bin->isChecked()) {
@@ -96,12 +109,10 @@ void MainWindow::on_pushButton_equal_clicked()
     } else if (ui->radioButton_oct->isChecked()){
         result_as_str = QString("%1").arg(result_as_int,0, 8);
     } else if (ui->radioButton_dec->isChecked()){
-
+        result_as_str = QString("%1").arg(result_as_int,0, 10);
     } else if (ui->radioButton_hex->isChecked()){
         result_as_str = QString("%1").arg(result_as_int,0, 16);
     }
-
-    //QString result = QString("%1").arg(res);
     ui->lineEdit->setText(result_as_str);
 }
 
@@ -148,6 +159,7 @@ void MainWindow::on_pushButton_division_clicked()
 void MainWindow::on_pushButton_clear_clicked()
 {
     ui->lineEdit->setText("");
+    ui->lineEdit->setFocus();
 }
 
 void MainWindow::on_pushButton_right_bracket_clicked()

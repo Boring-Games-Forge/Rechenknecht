@@ -89,6 +89,7 @@ double Rechner::ausdruck(char& c) // Übergabe per Referenz!
 
 double Rechner::calc(QString s) {
     char c;
+    position = 0;
     this->term = s.toStdString() + "\n";
     c = this->term.at(this->position++);
     return ausdruck(c);
