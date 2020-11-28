@@ -130,3 +130,5 @@ QString Rechner::calc(QString s, int base) {
 }
 
 
+
+

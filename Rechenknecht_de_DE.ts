@@ -10,6 +10,29 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="mainwindow.ui" line="45"/>
+        <location filename="mainwindow.ui" line="338"/>
+        <source>Bin</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="52"/>
+        <source>Oct</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="59"/>
+        <location filename="mainwindow.ui" line="188"/>
+        <source>Dec</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="69"/>
+        <location filename="mainwindow.ui" line="138"/>
+        <source>Hex</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="mainwindow.ui" line="108"/>
         <source>B</source>
         <translation type="unfinished"></translation>
@@ -24,12 +47,6 @@
         <location filename="mainwindow.ui" line="128"/>
         <location filename="out/build/x64-Debug (Standard)/Rechenknecht_autogen/include/ui_mainwindow.h" line="249"/>
         <source>/</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="mainwindow.ui" line="69"/>
-        <location filename="mainwindow.ui" line="138"/>
-        <source>Hex</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -52,17 +69,6 @@
     <message>
         <location filename="mainwindow.ui" line="178"/>
         <source>C</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="mainwindow.ui" line="59"/>
-        <location filename="mainwindow.ui" line="188"/>
-        <source>Dec</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="mainwindow.ui" line="52"/>
-        <source>Oct</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -143,12 +149,6 @@
         <location filename="mainwindow.ui" line="328"/>
         <location filename="out/build/x64-Debug (Standard)/Rechenknecht_autogen/include/ui_mainwindow.h" line="244"/>
         <source>2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="mainwindow.ui" line="45"/>
-        <location filename="mainwindow.ui" line="338"/>
-        <source>Bin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
