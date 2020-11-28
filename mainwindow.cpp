@@ -48,8 +48,39 @@ void MainWindow::on_pushButton_plus_clicked()
 
 void MainWindow::on_pushButton_equal_clicked()
 {
-    QString qstr = QString("%1").arg(rechner->calc(ui->lineEdit->text()));
-    ui->lineEdit->setText(qstr);
+    QString term_as_str = ui->lineEdit->text();
+    QString result_as_str;
+    int result_as_int;
+    int term_as_int;
+    bool ok;
+
+    if (ui->radioButton_bin->isChecked()) {
+       // binaer in dezimal...
+
+        //result_as_str = QString("%1").arg(result_as_int,0, 2);
+    } else if (ui->radioButton_oct->isChecked()){
+
+    } else if (ui->radioButton_dec->isChecked()){
+
+    } else if (ui->radioButton_hex->isChecked()){
+
+    }
+
+    result_as_int = rechner->calc(term_as_str);
+
+    if (ui->radioButton_bin->isChecked()) {
+       // dezimal in binaer...
+        result_as_str = QString("%1").arg(result_as_int,0, 2);
+    } else if (ui->radioButton_oct->isChecked()){
+        result_as_str = QString("%1").arg(result_as_int,0, 8);
+    } else if (ui->radioButton_dec->isChecked()){
+
+    } else if (ui->radioButton_hex->isChecked()){
+        result_as_str = QString("%1").arg(result_as_int,0, 16);
+    }
+
+    //QString result = QString("%1").arg(res);
+    ui->lineEdit->setText(result_as_str);
 }
 
 void MainWindow::on_pushButton_6_clicked()
@@ -115,4 +146,116 @@ void MainWindow::on_pushButton_sqrt_clicked()
 void MainWindow::on_pushButton_pi_clicked()
 {
     ui->lineEdit->setText(ui->lineEdit->text() + "3.1415");
+}
+
+void MainWindow::on_radioButton_bin_clicked()
+{
+    ui->pushButton_0->setEnabled(true);
+    ui->pushButton_1->setEnabled(true);
+    ui->pushButton_2->setEnabled(false);
+    ui->pushButton_3->setEnabled(false);
+    ui->pushButton_4->setEnabled(false);
+    ui->pushButton_5->setEnabled(false);
+    ui->pushButton_6->setEnabled(false);
+    ui->pushButton_7->setEnabled(false);
+    ui->pushButton_8->setEnabled(false);
+    ui->pushButton_9->setEnabled(false);
+    ui->pushButton_A->setEnabled(false);
+    ui->pushButton_B->setEnabled(false);
+    ui->pushButton_C->setEnabled(false);
+    ui->pushButton_D->setEnabled(false);
+    ui->pushButton_E->setEnabled(false);
+    ui->pushButton_F->setEnabled(false);
+}
+
+void MainWindow::on_radioButton_oct_clicked()
+{
+    ui->pushButton_0->setEnabled(true);
+    ui->pushButton_1->setEnabled(true);
+    ui->pushButton_2->setEnabled(true);
+    ui->pushButton_3->setEnabled(true);
+    ui->pushButton_4->setEnabled(true);
+    ui->pushButton_5->setEnabled(true);
+    ui->pushButton_6->setEnabled(true);
+    ui->pushButton_7->setEnabled(true);
+    ui->pushButton_8->setEnabled(false);
+    ui->pushButton_9->setEnabled(false);
+    ui->pushButton_A->setEnabled(false);
+    ui->pushButton_B->setEnabled(false);
+    ui->pushButton_C->setEnabled(false);
+    ui->pushButton_D->setEnabled(false);
+    ui->pushButton_E->setEnabled(false);
+    ui->pushButton_F->setEnabled(false);
+}
+
+void MainWindow::on_radioButton_dec_clicked()
+{
+    ui->pushButton_0->setEnabled(true);
+    ui->pushButton_1->setEnabled(true);
+    ui->pushButton_2->setEnabled(true);
+    ui->pushButton_3->setEnabled(true);
+    ui->pushButton_4->setEnabled(true);
+    ui->pushButton_5->setEnabled(true);
+    ui->pushButton_6->setEnabled(true);
+    ui->pushButton_7->setEnabled(true);
+    ui->pushButton_8->setEnabled(true);
+    ui->pushButton_9->setEnabled(true);
+    ui->pushButton_A->setEnabled(false);
+    ui->pushButton_B->setEnabled(false);
+    ui->pushButton_C->setEnabled(false);
+    ui->pushButton_D->setEnabled(false);
+    ui->pushButton_E->setEnabled(false);
+    ui->pushButton_F->setEnabled(false);
+}
+
+void MainWindow::on_radioButton_hex_clicked()
+{
+    ui->pushButton_0->setEnabled(true);
+    ui->pushButton_1->setEnabled(true);
+    ui->pushButton_2->setEnabled(true);
+    ui->pushButton_3->setEnabled(true);
+    ui->pushButton_4->setEnabled(true);
+    ui->pushButton_5->setEnabled(true);
+    ui->pushButton_6->setEnabled(true);
+    ui->pushButton_7->setEnabled(true);
+    ui->pushButton_8->setEnabled(true);
+    ui->pushButton_9->setEnabled(true);
+    ui->pushButton_A->setEnabled(true);
+    ui->pushButton_B->setEnabled(true);
+    ui->pushButton_C->setEnabled(true);
+    ui->pushButton_D->setEnabled(true);
+    ui->pushButton_E->setEnabled(true);
+    ui->pushButton_F->setEnabled(true);
+}
+
+void MainWindow::on_pushButton_A_clicked()
+{
+    ui->lineEdit->setText(ui->lineEdit->text() + "A");
+}
+
+
+
+void MainWindow::on_pushButton_B_clicked()
+{
+    ui->lineEdit->setText(ui->lineEdit->text() + "B");
+}
+
+void MainWindow::on_pushButton_C_clicked()
+{
+    ui->lineEdit->setText(ui->lineEdit->text() + "C");
+}
+
+void MainWindow::on_pushButton_D_clicked()
+{
+    ui->lineEdit->setText(ui->lineEdit->text() + "D");
+}
+
+void MainWindow::on_pushButton_E_clicked()
+{
+    ui->lineEdit->setText(ui->lineEdit->text() + "E");
+}
+
+void MainWindow::on_pushButton_F_clicked()
+{
+    ui->lineEdit->setText(ui->lineEdit->text() + "F");
 }

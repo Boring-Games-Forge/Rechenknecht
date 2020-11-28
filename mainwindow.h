@@ -60,6 +60,26 @@ private slots:
 
     void on_pushButton_pi_clicked();
 
+    void on_radioButton_bin_clicked();
+
+    void on_radioButton_oct_clicked();
+
+    void on_radioButton_dec_clicked();
+
+    void on_radioButton_hex_clicked();
+
+    void on_pushButton_A_clicked();
+
+    void on_pushButton_B_clicked();
+
+    void on_pushButton_C_clicked();
+
+    void on_pushButton_D_clicked();
+
+    void on_pushButton_E_clicked();
+
+    void on_pushButton_F_clicked();
+
 private:
     Ui::MainWindow *ui;
 };
