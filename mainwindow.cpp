@@ -58,7 +58,7 @@ void MainWindow::on_pushButton_equal_clicked()
     QString zahl;
     int zahl_as_int;
 
-    QStringList zahlen_liste = term_as_str.split(QRegExp("\\W|\\D"));
+    QStringList zahlen_liste = term_as_str.split(QRegExp("\\W"));
 
     if (ui->radioButton_bin->isChecked()) {
         // binaer in dezimal...
@@ -92,16 +92,19 @@ void MainWindow::on_pushButton_equal_clicked()
     int l = 0;
     int j = 0;
     int o = 0;
+    char c;
+    term_as_new_str = term_as_str;
     for (int i = 0; i < term_as_str.length(); i++) {
         j = 0;
-        if (isdigit(term_as_str.at(i).toLatin1())) {
+        c = term_as_str.at(i).toLatin1();
+        if (isdigit(c) || c == 'A' || c == 'B' || c =='C' || c == 'D' || c == 'E' || c == 'F' ) {
             l++;
         } else {
-            term_as_new_str = term_as_str.replace(i-l, l, zahlen_liste[o++]);
+            term_as_new_str = term_as_new_str.replace(i-l, l, zahlen_liste[o++]);
             l = 0;
         }
     }
-    result_as_int = rechner->calc(term_as_str);
+    result_as_int = rechner->calc(term_as_new_str);
 
     if (ui->radioButton_bin->isChecked()) {
        // dezimal in binaer...
