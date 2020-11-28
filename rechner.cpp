@@ -87,15 +87,46 @@ double Rechner::ausdruck(char& c) // Übergabe per Referenz!
     return a;
 }
 
-double Rechner::calc(QString s) {
+QString Rechner::calc(QString s, int base) {
     char c;
     position = 0;
-    this->term = s.toStdString() + "\n";
+
+    QString term_as_str = s;//ui->lineEdit->text();
+
+    QString term_as_new_str;
+    QString result_as_str;
+    int result_as_int;
+    bool ok;
+    QString zahl;
+    int zahl_as_int;
+
+    QStringList zahlen_liste = term_as_str.split(QRegExp("\\W"));
+        // binaer in dezimal...
+        for (int i = 0; i < zahlen_liste.length(); i++) {
+            zahl = zahlen_liste[i];
+            zahl_as_int = zahl.toInt(&ok, base);
+            zahlen_liste[i] = QString::number(zahl_as_int);
+        }
+    int l = 0;
+    int j = 0;
+    int o = 0;
+    char ch = '\0';
+    term_as_new_str = term_as_str;
+    for (int i = 0; i < term_as_str.length(); i++) {
+        j = 0;
+        ch = term_as_str.at(i).toLatin1();
+        if (isdigit(ch) || ch == 'A' || ch == 'B' || ch =='C' || ch == 'D' || ch == 'E' || ch == 'F' ) {
+            l++;
+        } else {
+            term_as_new_str = term_as_new_str.replace(i-l, l, zahlen_liste[o++]);
+            l = 0;
+        }
+    }
+    this->term = term_as_new_str.toStdString() + "\n";
     c = this->term.at(this->position++);
-    return ausdruck(c);
+    result_as_int = (int)round(ausdruck(c));
+    result_as_str = QString("%1").arg(result_as_int,0, base);
+    return result_as_str;
 }
-//{
-//	char c{'\n'};
-//	c = term.at(position++);
-//	std::cout << ausdruck(c);
-//}
+
+

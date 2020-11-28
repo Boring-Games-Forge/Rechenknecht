@@ -13,7 +13,7 @@ public:
     int position = 0;
 
     explicit Rechner(QObject *parent = nullptr);
-    double calc(QString s);
+    QString calc(QString s, int base = 10);
 
 private:
     double ausdruck(char& c);
