@@ -51,7 +51,6 @@ void MainWindow::on_pushButton_plus_clicked()
 void MainWindow::on_pushButton_equal_clicked()
 {
    QString term_as_str = ui->lineEdit->text();
-   QString result_as_str;
    int base = 10;
    if (ui->radioButton_bin->isChecked()) base = 2;
    if (ui->radioButton_oct->isChecked()) base = 8;

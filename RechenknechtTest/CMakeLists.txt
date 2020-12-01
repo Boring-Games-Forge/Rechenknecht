@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.5)
 
-project(Rechner LANGUAGES CXX)
+project(RechnerTest LANGUAGES CXX)
 
 
 find_package(Qt5Test REQUIRED)
@@ -16,8 +16,7 @@ set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 enable_testing()
 
-add_executable(Rechner tst_rechner.cpp ../rechner.cpp ../rechner.h)
-add_test(NAME Rechner COMMAND Rechner)
-
-target_link_libraries(Rechner PRIVATE Qt5::Gui Qt5::Test)
+add_executable(RechnerTest tst_rechner.cpp ../rechner.cpp ../rechner.h)
+#add_test(NAME Rechner COMMAND test_case1)
+target_link_libraries(RechnerTest PRIVATE Qt5::Gui Qt5::Test)
 
