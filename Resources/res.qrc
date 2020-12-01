@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/Res">
+        <file>calc.png</file>
+        <file>calc_trans.png</file>
+        <file>calc_trans.ico</file>
+        <file>icon.rc</file>
+    </qresource>
+    <qresource prefix="/">
+        <file>../Screenshot.png</file>
+    </qresource>
+</RCC>

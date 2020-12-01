@@ -115,11 +115,6 @@ void MainWindow::on_pushButton_left_bracket_clicked()
     ui->lineEdit->setText(ui->lineEdit->text() + "(");
 }
 
-void MainWindow::on_pushButton_sqrt_clicked()
-{
-    ui->lineEdit->setText(ui->lineEdit->text() + "^");
-}
-
 void MainWindow::on_pushButton_pi_clicked()
 {
     ui->lineEdit->setText(ui->lineEdit->text() + "3.1415");
@@ -236,3 +231,47 @@ void MainWindow::on_pushButton_F_clicked()
 {
     ui->lineEdit->setText(ui->lineEdit->text() + "F");
 }
+
+void MainWindow::on_radioButton_dec_toggled(bool checked)
+{
+    if(checked) {
+        ui->lineEdit->setText("");
+    }
+}
+
+void MainWindow::on_radioButton_oct_toggled(bool checked)
+{
+    if(checked) {
+        ui->lineEdit->setText("");
+    }
+}
+
+void MainWindow::on_radioButton_hex_toggled(bool checked)
+{
+    if(checked) {
+        ui->lineEdit->setText("");
+    }
+}
+
+void MainWindow::on_radioButton_bin_toggled(bool checked)
+{
+    if(checked) {
+        ui->lineEdit->setText("");
+    }
+}
+
+void MainWindow::on_pushButton_vorzeichen_wechsel_clicked()
+{
+
+}
+
+void MainWindow::on_pushButton_e_clicked()
+{
+
+}
+
+void MainWindow::on_pushButton_hoch_clicked()
+{
+
+}
+

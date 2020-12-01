@@ -58,7 +58,7 @@ long Rechner::faktor(QChar& c)
         c = term.at(position++); // ( überspringen
         f = ausdruck(c);
         if (c != ')'){
-            std::cerr << "Rechte Klammer fehlt!\n"; //*** s.u.
+            //std::cerr << "Rechte Klammer fehlt!\n"; //*** s.u.
         }
         else
             c = term.at(position++); // ) überspringen

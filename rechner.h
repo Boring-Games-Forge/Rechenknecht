@@ -4,7 +4,7 @@
 #include <QObject>
 #include <QChar>
 #include <QString>
-#include <iostream>
+//#include <iostream>
 /*
  * Diese Klasse berechnet nach dem Prinzip des Rekursiven Abstiegs
  * aus einem Term ein Ergebnis.

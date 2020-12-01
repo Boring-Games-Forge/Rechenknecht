@@ -56,8 +56,6 @@ private slots:
 
     void on_pushButton_left_bracket_clicked();
 
-    void on_pushButton_sqrt_clicked();
-
     void on_pushButton_pi_clicked();
 
     void on_radioButton_bin_clicked();
@@ -79,6 +77,20 @@ private slots:
     void on_pushButton_E_clicked();
 
     void on_pushButton_F_clicked();
+
+    void on_radioButton_dec_toggled(bool checked);
+
+    void on_radioButton_oct_toggled(bool checked);
+
+    void on_radioButton_hex_toggled(bool checked);
+
+    void on_radioButton_bin_toggled(bool checked);
+
+    void on_pushButton_vorzeichen_wechsel_clicked();
+
+    void on_pushButton_e_clicked();
+
+    void on_pushButton_hoch_clicked();
 
 private:
     Ui::MainWindow *ui;

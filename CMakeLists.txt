@@ -11,6 +11,9 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+set(APP_ICON_RESOURCE_WINDOWS ./Resources/res.qrc)
+
+
 enable_testing()
 
 # QtCreator supports the following variables for Android, which are identical to qmake Android variables.
@@ -46,6 +49,7 @@ else()
     mainwindow.h
     mainwindow.ui
     ${TS_FILES}
+    ${APP_ICON_RESOURCE_WINDOWS}
     rechner.cpp
     rechner.h
   )
